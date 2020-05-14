@@ -14,6 +14,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap theme -->
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    
+    <link href="css/style.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="theme.css" rel="stylesheet">
@@ -62,7 +64,48 @@
 
     <div class="container theme-showcase" role="main">
 
-      <h1>Ascolta & Medita: Prega</h1>
+      <label for="giorno">Cambia giorno:</label>
+      <input type="date" id="sele_data" name="giorno" onchange="cambiaGiorno(event);">
+      
+      
+      <div class="testi-preghiera">
+        
+        <h1 id="date_str"></h1>
+        <div id="quotes"></div>
+        
+        <div id="curatore">Questo mese è curato da: <span></span></div>
+        
+        <div id="indications"></div>
+        <div id="prevangelo"></div>
+        
+        
+        <div id="preghiniz">
+          <h3>Preghiera Iniziale</h3>
+          <div class="testo"></div>
+        </div>
+        
+        <div id="vangelo">
+          <h2 class="am">Ascolta</h2>
+          <h3>Vangelo</h3>
+          <div class="testo"></div>
+        </div>
+        
+        <div id="medita">
+          <h2 class="am">Medita</h2>
+          <div class="testo"></div>
+        </div>
+        
+        <div id="riflettere">
+          <h3>Per riflettere</h3>
+          <div class="testo"></div>
+        </div>
+        
+        <div id="preghfin">
+          <h3>Preghiera Finale</h3>
+          <div class="testo"></div>
+        </div>
+                
+      </div>
 
     </div> <!-- /container -->
 
@@ -72,5 +115,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/prega.js"></script>
   </body>
 </html>
