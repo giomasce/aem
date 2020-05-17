@@ -6,10 +6,36 @@ var anno = oggi.getFullYear();
 var mese = ("0" + (oggi.getMonth() + 1)).slice(-2) //aggiunge lo zero iniziale
 var giorno = ("0" + oggi.getDate()).slice(-2) //aggiunge lo zero iniziale
 
-console.log(giorno);
+$('#sele_data').datepicker({
+    format: {
+        toDisplay: function (date, format, language) {
+            var o = new Date(date);
+            var a = o.getFullYear();
+            var m = ("0" + (o.getMonth() + 1)).slice(-2)
+            var g = ("0" + o.getDate()).slice(-2)
+            return g+"/"+m+"/"+a;
+        },
+        toValue: function (date, format, language) {
+            var o = new Date(date);
+            var a = o.getFullYear();
+            var m = ("0" + (o.getMonth() + 1)).slice(-2)
+            var g = ("0" + o.getDate()).slice(-2)
+            return g+"/"+m+"/"+a;
+        }
+    },
+    weekStart: 1,
+    todayBtn: "linked",
+    language: "it",
+    autoclose: true,
+    todayHighlight: true,
+//  defaultViewDate: { year: anno, month: mese-1, day: giorno }
+});
 
 
 function scaricaJson(urljson) {
+  
+  // mostra lo spinner
+  $("#loading").show();
   
   $.ajax({
     	method: 'GET',
@@ -22,12 +48,13 @@ function scaricaJson(urljson) {
     		console.log(data);
     		
     		var date_str = data.date_str.toString().replace(/\n/g, "<br />");
-    		var indications = data.indications.toString().replace(/\n/g, "<br />");
+    		var indications = data.indications.toString().replace(/\n/g, " - ");
     		var quotes = data.quotes.toString().replace(/\n/g, "<br />");
     		var curatore = data.curatore.toString().replace(/\n/g, "<br />");
     		var prevangelo = data.prevangelo.toString().replace(/\n/g, "<br />");
     		var preghiniz = data.preghiniz.toString().replace(/\n/g, "<br />");
     		var vangelo = data.vangelo.toString().replace(/\n/g, "<br />");
+    		var quote_vangelo = data.quote_vangelo.toString().replace(/\n/g, "<br />");
     		var medita = data.medita.toString().replace(/\n/g, "<br />");
     		var riflettere = data.riflettere.toString().replace(/\n/g, "<br />");
     		var preghfin = data.preghfin.toString().replace(/\n/g, "<br />");        
@@ -37,42 +64,44 @@ function scaricaJson(urljson) {
       $("#indications").html(indications);
       $("#quotes").html(quotes);
       $("#curatore span").html(curatore);
-      $("#prevangelo").html(prevangelo);
+      
+      if (prevangelo != "") {
+      $("#prevangelo").html("<hr><i>"+prevangelo+"<i>"); 
+      }
 
       $("#preghiniz .testo").html(preghiniz);
       $("#vangelo .testo").html(vangelo);
+      $("#vangelo h5 span").html(quote_vangelo);
       $("#medita .testo").html(medita);
       $("#riflettere .testo").html(riflettere);
       $("#preghfin .testo").html(preghfin);
        
     	},
     	error: function (request, status, error) {
-    		console.log(status);						
+    		console.log(status);
+    		$('#modalErrore').modal('show');
     	},
     	
     	complete: function() {
-    				
+      	// cambia le classi al blocco dei testi così da mostrarlo con i dati scaricati
+      $(".testi-preghiera").removeClass("d-none")
+      $(".testi-preghiera").addClass("d-block")
+      
+    		$("#loading").hide();	
     	}
   });
-
 }
 
-/*
-function inserisciHtml(html) {
-  $("#testi-preghiera").append(html)
-}
-*/
-
-
-
-// cerco il parametro data nell'url e se è presente lo utilizzo per scaricare il json
-if (urlParams.has('data') && urlParams.get('data') != "" && urlParams.get('data').length == 8) {
+// cerco il parametro data nell'url e se è presente lo utilizzo per scaricare il json altrimenti imposto la data di oggi
+if (urlParams.has('data') && urlParams.get('data') != "" && urlParams.get('data').length == 8 && !isNaN(urlParams.get('data'))) {
   
     date = urlParams.get('data');
     
     anno = date.substr(0,4);
     mese = date.substr(4,2);
     giorno = date.substr(6,2);
+    
+    $('#sele_data').datepicker('update', new Date(anno, mese-1, giorno));
     
     scaricaJson(anno+"/"+mese+"/"+giorno+".json");
   
@@ -90,19 +119,25 @@ function dataUrl(anno, mese, giorno) {
  
   
 function cambiaGiorno(e){
-  console.log(e.target.value);
+  //console.log(e.target.value);
   
+  // recupero il valore della data dall'url
   data = e.target.value;
-  data = data.split("-");
-  
-  //scaricaJson(data[0]+"/"+data[1]+"/"+data[2]+".json");
-  
+  data = data.split("/");
+    
   //cambio il parametro data nell'url
-  dataUrl(data[0], data[1], data[2]);
+  dataUrl(data[2], data[1], data[0]);
 }
 
 
-var dateControl = $("#sele_data")[0]; //[0].value;
-dateControl.value = anno+"-"+mese+"-"+giorno;
-  
+// al cambio di data nel datapicker avvia la funzione cambiaGiorno
+$('#sele_data').datepicker().on('changeDate', function(e) {
+  cambiaGiorno(e);
+});
+
+// quando premo il pulsante con l'icona mostra il datapicker
+$('#btt_sele_data').on('click', function(e) {
+  $('#sele_data').datepicker('show');
+});
+
   
