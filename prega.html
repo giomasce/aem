@@ -13,10 +13,9 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap theme -->
-    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- <link href="css/bootstrap-theme.min.css" rel="stylesheet"> -->
     
-    <link href="css/style.css" rel="stylesheet">
-
+     <link href="css/datepicker/bootstrap-datepicker3.standalone.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="theme.css" rel="stylesheet">
 <!-- Piwik -->
@@ -41,71 +40,128 @@
   <body role="document">
 
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">Ascolta & Medita</a>
+    <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-md" role="navigation">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Ascolta & Medita</a>
+            <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span>&#x2630;</button> 
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                  <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                  <li class="nav-item active"><a href="prega.html" class="nav-link">Prega</a></li>
+                  <li class="nav-item"><a href="contatti.html" class="nav-link">Contatti</a></li>
+              </ul>
+            </div>
+            <!--/.nav-collapse -->
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="index.html">Home</a></li>
-            <li class="active"><a href="prega.html">Prega</a></li>
-            <li><a href="contatti.html">Contatti</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
     </nav>
 
     <div class="container theme-showcase" role="main">
+      
+      <div class="container">
+        <div class="row align-items-center mb-3">
+          <div class="col-md-4 px-0">
+          
+            <div class="input-group date">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Data</span>
+              </div>
+                <input id="sele_data" type="text" class="form-control"><span class="input-group-addon"></span>
+              <div class="input-group-append">
+                <span class="input-group-text p-0">
+                <button class="btn py-0" type="button" id="btt_sele_data">
+                  <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
+                  </svg>
+                </button>
+                </span>
+              </div>
+            </div>
 
-      <label for="giorno">Cambia giorno:</label>
-      <input type="date" id="sele_data" name="giorno" onchange="cambiaGiorno(event);">
+          </div>
+          <div class="col-md-8 px-0 pt-2 pt-md0">
+            <div class="testi-preghiera d-none small text-center text-md-right" id="curatore"><i>Questo mese è curato da: <span></span></i></div>
+          </div>
+        </div>
+      </div>
       
+      <div id="loading" class="text-center">
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
       
-      <div class="testi-preghiera">
+      <div class="testi-preghiera d-none">
         
-        <h1 id="date_str"></h1>
-        <div id="quotes"></div>
+        <div class="jumbotron py-4">
+          <h1 class="display-4 text-capitalize" id="date_str"></h1>
+          <p class="h4" id="indications"></p>
+          <hr>
+          <p class="lead mb-0" id="quotes"></p>
+          <p class="mb-0" id="prevangelo"><i></i></p>
+        </div>        
         
-        <div id="curatore">Questo mese è curato da: <span></span></div>
-        
-        <div id="indications"></div>
-        <div id="prevangelo"></div>
-        
-        
-        <div id="preghiniz">
-          <h3>Preghiera Iniziale</h3>
-          <div class="testo"></div>
+        <div class="card mb-4" id="preghiniz">
+          <h5 class="card-header">Preghiera Iniziale</h5>
+          <div class="card-body">
+            <p class="card-text testo"></p>
+          </div>
         </div>
         
-        <div id="vangelo">
-          <h2 class="am">Ascolta</h2>
-          <h3>Vangelo</h3>
-          <div class="testo"></div>
+        <h2 class="mt-4 mx-2">Ascolta</h2>
+        <hr class="mt-0 mb-4">
+        
+        <div class="card mb-4" id="vangelo">
+          <h5 class="card-header">Dal Vangelo <span></span></h5>
+          <div class="card-body">
+            <p class="card-text testo"></p>
+          </div>
+        </div>
+
+        <h2 class="mt-4 mx-2">Medita</h2>
+        <hr class="mt-0 mb-4">
+        
+        <div class="card mb-4" id="medita">
+          <div class="card-body">
+            <p class="card-text testo"></p>
+          </div>
+        </div>
+
+        <div class="card mb-4" id="riflettere">
+          <h5 class="card-header">Per riflettere</h5>
+          <div class="card-body">
+            <p class="card-text testo"></p>
+          </div>
         </div>
         
-        <div id="medita">
-          <h2 class="am">Medita</h2>
-          <div class="testo"></div>
-        </div>
-        
-        <div id="riflettere">
-          <h3>Per riflettere</h3>
-          <div class="testo"></div>
-        </div>
-        
-        <div id="preghfin">
-          <h3>Preghiera Finale</h3>
-          <div class="testo"></div>
+        <div class="card mb-4" id="preghfin">
+          <h5 class="card-header">Preghiera Finale</h5>
+          <div class="card-body">
+            <p class="card-text testo"></p>
+          </div>
         </div>
                 
       </div>
+      
+      <div id="modalErrore" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Errore</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Si è verificato un errore.<br>Se la data scelta è corretta il giorno potrebbe non essere disponibile.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="errore" class="d-none">Si è verificato un errore! <br>Se la data è corretta, il giorno scelto non è disponibile.</div>
 
     </div> <!-- /container -->
 
@@ -115,6 +171,8 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="js/datepicker/bootstrap-datepicker.it.min.js"></script>
     <script src="js/prega.js"></script>
   </body>
 </html>
