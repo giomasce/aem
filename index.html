@@ -13,7 +13,7 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap theme -->
-    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+<!--     <link href="css/bootstrap-theme.min.css" rel="stylesheet"> -->
 
     <!-- Custom styles for this template -->
     <link href="theme.css" rel="stylesheet">
@@ -39,212 +39,235 @@
   <body role="document">
 
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-md" role="navigation">
       <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
           <a class="navbar-brand" href="index.html">Ascolta & Medita</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="contatti.html">Contatti</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
+          <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span>&#x2630;</button> 
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="prega.html" class="nav-link">Prega</a></li>
+                <li class="nav-item"><a href="contatti.html" class="nav-link">Contatti</a></li>
+            </ul>
+          </div>
+          <!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container theme-showcase" role="main">
+      
+      <div class="jumbotron">
+        <h1 class="display-4">Ascolta & Medita</h1>
+        <p class="lead mb-0">Ascolta & Medita è un un'occasione di incontro e meditazione della Parola di Dio quotidiana, prodotto dalla Diocesi di Pisa.<br />In molte chiese della diocesi di Pisa è possibile trovarlo in forma cartacea. Qui è disponibile in vari formati digitali per chi abita lontano da Pisa, o per chi preferisce leggere direttamente sul proprio smartphone o computer.
+          <br /><br />Buona meditazione!</p>
+      </div>
+      
+      <div class="alert alert-success mb-5" role="alert">
+        <h4 class="alert-heading">Novità aprile 2020!</h4>
+        <p class="mb-0">Recentemente Ascolta & Medita ha esteso la sua presenza sul web e può essere letto tramite email, Telegram o Twitter.
+        <br />Puoi scaricare e divulgare il volantino (<a href="flyer/AeM%20colori.pdf" target="_blank">a colori</a> o <a href="flyer/AeM%20bianco%20e%20nero.pdf" target="_blank">in bianco e nero</a>) che ricapitola tutte i canali disponibili!</p>
+      </div>    
+      
+      <div class="card-deck text-left mb-4">
+        <div class="card shadow-sm">
+          <h5 class="card-header">Email</h5>
+          <div class="card-body">
+            <p class="card-text">Puoi ricevere ogni giorno Ascolta e Medita sulla tua casella email iscrivendoti, premi il pulsante sottostante.</p>
+          </div>
+          <div class="card-footer">
+            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#iscrEmail">Iscriviti</button>
+          </div>
+        </div>
+        <div class="card shadow-sm">
+          <h5 class="card-header">Telegram</h5>
+          <div class="card-body">
+            <p class="card-text">Se usi l'applicazione di messaggeria Telegram puoi ricevere ogni giorno direttamente sul tuo computer o smartphone la meditazione di Ascolta e Medita, iscrivendoti al canale dedicato.</p>
+          </div>
+          <div class="card-footer">
+            <a href="https://t.me/AscoltaEMedita" class="btn btn-dark">Canale Telegram</a>
+          </div>
+        </div>
+        <div class="card shadow-sm">
+          <h5 class="card-header">Twitter</h5>
+          <div class="card-body">
+            <p class="card-text">Segui il <a href="https://twitter.com/AscoltaEMedita">profilo di Ascolta & Medita</a>, che twitterà ogni mattina la meditazione del giorno.</p>
+          </div>
+          <div class="card-footer">
+            <a href="https://twitter.com/AscoltaEMedita" class="btn btn-dark">Profilo Twitter</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="iscrEmail" tabindex="-1" role="dialog" aria-labelledby="Iscrizione Email" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Ascolta & Medita</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Nome e cognome sono opzionali, puoi lasciarli bianchi se non vuoi darli.<br />È possibile disiscriversi in ogni momento utilizzando il link in fondo ad ogni email.</p>
+              <script async type="text/javascript" src="https://mautic.ascoltaemedita.it/form/generate.js?id=1"></script>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="accordion" id="pdf-scaricabili">
+        <div class="card shadow-sm text-center">
+          <h5 class="card-header">Archivio PDF</h5>
+          <div class="card-body">
+            <p class="card-text">Puoi trovare qui sotto tutti i PDF di Ascolta e Medita dal 2013 in poi.</p>
+            <a href="#elencoPDF" class="btn btn-outline-dark" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="elencoPDF">Apri archivio</a>
+          </div>
+          
+          <div id="elencoPDF" class="collapse" aria-labelledby="elencoPDF" data-parent="#pdf-scaricabili">
+            <div class="card-body text-left pt-0">
+              <hr class="mt-0">
+        
+              <h3>Anno 2020</h3>
+              <ul>
+                <!--<li><a href="issues/aem_2020_12.pdf">Dicembre 2020</a> (numero curato da Tommaso Rizzo, Rebecca D'Andrea)</li>
+                <li><a href="issues/aem_2020_11.pdf">Novembre 2020</a> (numero curato da Patrizia Valleggi)</li>
+                <li><a href="issues/aem_2020_10.pdf">Ottobre 2020</a> (numero curato da Silvia e Paolo Sciotti)</li>
+                <li><a href="issues/aem_2020_09.pdf">Settembre 2020</a> (numero curato da Massimo Salani)</li>
+                <li><a href="issues/aem_2020_08.pdf">Agosto 2020</a> (numero curato da Michela e Roberto Roncella)</li>
+                <li><a href="issues/aem_2020_07.pdf">Luglio 2020</a> (numero curato da Chiara Sani)</li>-->
+                <li><a href="issues/aem_2020_06.pdf">Giugno 2020</a> (numero curato da Claudia Lamberti e Gabriele Bolognini)</li>
+                <li><a href="issues/aem_2020_05.pdf">Maggio 2020</a> (numero curato da Cristina e Emanuele Cattin, Michela e Paolo Buti)</li>
+                <li><a href="issues/aem_2020_04.pdf">Aprile 2020</a> (numero curato da Daniela e Mauro Leoncini)</li>
+                <li><a href="issues/aem_2020_03.pdf">Marzo 2020</a> (numero curato da una francescana secolare in cammino)</li>
+                <li><a href="issues/aem_2020_02.pdf">Febbraio 2020</a> (numero curato da Laura e Paolo Puglisi, Anna Fronda, Federica Fronda)</li>
+                <li><a href="issues/aem_2020_01.pdf">Gennaio 2020</a> (numero curato da Domenico Coviello, Angela Castino)</li>
+              </ul>
+        
+              <hr>
+              <h3>Anno 2019</h3>
+              <ul>
+                <li><a href="issues/aem_2019_12.pdf">Dicembre 2019</a> (numero curato da Tommaso Rizzo, Rebecca D'Andrea)</li>
+                <li><a href="issues/aem_2019_11.pdf">Novembre 2019</a> (numero curato da Patrizia Valleggi)</li>
+                <li><a href="issues/aem_2019_10.pdf">Ottobre 2019</a> (numero curato da Silvia e Paolo Sciotti)</li>
+                <li><a href="issues/aem_2019_09.pdf">Settembre 2019</a> (numero curato da Massimo Salani)</li>
+                <li><a href="issues/aem_2019_08.pdf">Agosto 2019</a> (numero curato da Michela e Roberto Roncella)</li>
+                <li><a href="issues/aem_2019_07.pdf">Luglio 2019</a> (numero curato da Chiara Sani)</li>
+                <li><a href="issues/aem_2019_06.pdf">Giugno 2019</a> (numero curato da Francesca e Luigi Pisani, Giovanni Mascellani)</li>
+                <li><a href="issues/aem_2019_05.pdf">Maggio 2019</a> (numero curato da Barbara Pandolfi)</li>
+                <li><a href="issues/aem_2019_04.pdf">Aprile 2019</a> (numero curato da Federica e Paolo Martinelli, Gianmarco Brocchi, Chiara Martinelli, Cristina Martinelli)</li>
+                <li><a href="issues/aem_2019_03.pdf">Marzo 2019</a> (numero curato da Luigi Cioni)</li>
+                <li><a href="issues/aem_2019_02.pdf">Febbraio 2019</a> (numero curato da Gabriella e Giacomo Gasparri, Cecilia e Pascal Biver)</li>
+                <li><a href="issues/aem_2019_01.pdf">Gennaio 2019</a> (numero curato da Ilaria Morelli, Martina Mazzanti)</li>
+              </ul>
+        
+              <hr>
+              <h3>Anno 2018</h3>
+              <ul>
+                <li><a href="issues/aem_2018_12.pdf">Dicembre 2018</a> (numero curato da Paola e Andrea Bonaccorsi)</li>
+                <li><a href="issues/aem_2018_11.pdf">Novembre 2018</a> (numero curato da Barbara Pandolfi)</li>
+                <li><a href="issues/aem_2018_10.pdf">Ottobre 2018</a> (numero curato da Simone, Alessia e Alice Lunardi)</li>
+                <li><a href="issues/aem_2018_09.pdf">Settembre 2018</a> (numero curato da Chiara Sani)</li>
+                <li><a href="issues/aem_2018_08.pdf">Agosto 2018</a> (numero curato da Patrizia Valleggi)</li>
+                <li><a href="issues/aem_2018_07.pdf">Luglio 2018</a> (numero curato da Ilaria Morelli, Martina Mazzanti)</li>
+                <li><a href="issues/aem_2018_06.pdf">Giugno 2018</a> (numero curato da Massimo Salani)</li>
+                <li><a href="issues/aem_2018_05.pdf">Maggio 2018</a> (numero curato da una francescana secolare in cammino)</li>
+                <li><a href="issues/aem_2018_04.pdf">Aprile 2018</a> (numero curato da Caterina Guidi, Luisa Prodi, Giovanni Mascellani)</li>
+                <li><a href="issues/aem_2018_03.pdf">Marzo 2018</a> (numero curato da Michela e Roberto Roncella)</li>
+                <li><a href="issues/aem_2018_02.pdf">Febbraio 2018</a> (numero curato da Fabiola, Matteo e Emanuele Tomasi)</li>
+                <li><a href="issues/aem_2018_01.pdf">Gennaio 2018</a> (numero curato da Benedetta e Adriano Cerri, Giovanni Mascellani, Donatella Bouillon)</li>
+              </ul>
+        
+              <hr>
+              <h3>Anno 2017</h3>
+              <ul>
+                <li><a href="issues/aem_2017_12.pdf">Dicembre 2017</a> (numero curato da Gabriella e Giacomo Gasparri, Cecilia e Pascal Biver, Chiara e Gabriele Cheli)</li>
+                <li><a href="issues/aem_2017_11.pdf">Novembre 2017</a> (numero curato da Rossella e Davide Salvetti)</li>
+                <li><a href="issues/aem_2017_10.pdf">Ottobre 2017</a> (numero curato da Luisa e Massimo Signorini)</li>
+                <li><a href="issues/aem_2017_09.pdf">Settembre 2017</a> (numero curato da Simone, Alessia e Alice Lunardi)</li>
+                <li><a href="issues/aem_2017_08.pdf">Agosto 2017</a> (numero curato da Barbara Pandolfi)</li>
+                <li><a href="issues/aem_2017_07.pdf">Luglio 2017</a> (numero curato da Laura e Paolo Puglisi, Giulia e Fausto Montana)</li>
+                <li><a href="issues/aem_2017_06.pdf">Giugno 2017</a> (numero curato da Caterina Guidi)</li>
+                <li><a href="issues/aem_2017_05.pdf">Maggio 2017</a> (numero curato da Cristina e Emanuele Cattin, Michela e Paolo Buti)</li>
+                <li><a href="issues/aem_2017_04.pdf">Aprile 2017</a> (numero curato da Cristina e Francesco Scigliano, Centro Diocesano per le Vocazioni di Pisa)</li>
+                <li><a href="issues/aem_2017_03.pdf">Marzo 2017</a> (numero curato da Maria Concetta e Maurizio Pratelli)</li>
+                <li><a href="issues/aem_2017_02.pdf">Febbraio 2017</a> (numero curato da Roberta e Maurizio Guidato)</li>
+                <li><a href="issues/aem_2017_01.pdf">Gennaio 2017</a> (numero curato da Giuseppe Lami)</li>
+              </ul>
+        
+              <hr>
+              <h3>Anno 2016</h3>
+              <ul>
+                <li><a href="issues/aem_2016_12.pdf">Dicembre 2016</a> (numero curato da Maria Chiara e Giulio Vettori, Mario Cristofaro)</li>
+                <li><a href="issues/aem_2016_11.pdf">Novembre 2016</a> (numero curato da Gigi Avanti)</li>
+                <li><a href="issues/aem_2016_10.pdf">Ottobre 2016</a> (numero curato da Benedetta e Adriano Cerri)</li>
+                <li><a href="issues/aem_2016_09.pdf">Settembre 2016</a> (numero curato da Saverio Cenderelli, Giovanni Mascellani)</li>
+                <li><a href="issues/aem_2016_08.pdf">Agosto 2016</a> (numero curato da Laura e Paolo Puglisi, Giulia e Fausto Montana)</li>
+                <li><a href="issues/aem_2016_07.pdf">Luglio 2016</a> (numero curato da Massimo Salani)</li>
+                <li><a href="issues/aem_2016_06.pdf">Giugno 2016</a> (numero curato da Gabriella e Giacomo Gasparri, Cecilia e Pascal Biver)</li>
+                <li><a href="issues/aem_2016_05.pdf">Maggio 2016</a> (numero curato da Giulia e Antonio Sartori, Azzurra Bassi, Cosimo Dimitri)</li>
+                <li><a href="issues/aem_2016_04.pdf">Aprile 2016</a> (numero curato da Valentina e Matteo Benotto)</li>
+                <li><a href="issues/aem_2016_03.pdf">Marzo 2016</a> (numero curato da Caterina Guidi)</li>
+                <li><a href="issues/aem_2016_02.pdf">Febbraio 2016</a> (numero curato da Elisa e Marco Castrucci)</li>
+                <li><a href="issues/aem_2016_01.pdf">Gennaio 2016</a> (numero curato da Giovanna e Alfredo Capparelli, Luisa Prodi, Giovanni Mascellani)</li>
+              </ul>
 
-      <h1>Ascolta & Medita</h1>
+              <hr>
+              <h3>Anno 2015</h3>
+              <ul>
+                <li><a href="issues/aem_2015_12.pdf">Dicembre 2015</a> (numero curato da Gigi Avanti)</li>
+                <li><a href="issues/aem_2015_11.pdf">Novembre 2015</a> (numero curato da Donatella Bouillon, Agostino Cerrai)</li>
+                <li><a href="issues/aem_2015_10.pdf">Ottobre 2015</a> (numero curato da Chiara Sani)</li>
+                <li><a href="issues/aem_2015_09.pdf">Settembre 2015</a> (numero curato da Massimo Salani)</li>
+                <li><a href="issues/aem_2015_08.pdf">Agosto 2015</a> (numero curato da Giulio e Maria Chiara Vettori)</li>
+                <li><a href="issues/aem_2015_07.pdf">Luglio 2015</a> (numero curato da Barbara Pandolfi)</li>
+                <li><a href="issues/aem_2015_06.pdf">Giugno 2015</a> (numero curato da Andrea e Paola Bonaccorsi, Fausto e Giulia Montana)</li>
+                <li><a href="issues/aem_2015_05.pdf">Maggio 2015</a> (numero curato da Alfredo e Giovanna Capparelli, Paolo e Laura Puglisi, Rita Puglisi, Marco Puglisi, Enrico Puglisi)</li>
+                <li><a href="issues/aem_2015_04.pdf">Aprile 2015</a> (numero curato da Mons. Enzo Lucchesini)</li>
+                <li><a href="issues/aem_2015_03.pdf">Marzo 2015</a> (numero curato da Giacomo e Gabriella Gasparri, Pascal e Cecilia Biver)</li>
+                <li><a href="issues/aem_2015_02.pdf">Febbraio 2015</a> (numero curato da Luigi Cioni)</li>
+                <li><a href="issues/aem_2015_01.pdf">Gennaio 2015</a> (numero curato da Sandro e Laura Borsacchi)</li>
+              </ul>
+        
+              <hr>
+              <h3>Anno 2014</h3>
+              <ul>
+                <li><a href="issues/aem_2014_12.pdf">Dicembre 2014</a> (numero curato da Mons. Enzo Lucchesini)</li>
+                <li><a href="issues/aem_2014_11.pdf">Novembre 2014</a> (numero curato da Simone e Annarita Allegrini, Giovanni Mascellani)</li>
+                <li><a href="issues/aem_2014_10.pdf">Ottobre 2014</a> (numero curato da Gigi Avanti)</li>
+                <li><a href="issues/aem_2014_09.pdf">Settembre 2014</a> (numero curato da Donatella Bouillon, Maurizio e Maria Concetta Pratelli)</li>
+                <li><a href="issues/aem_2014_08.pdf">Agosto 2014</a> (numero curato dalla famiglia Tomasi: Andrea e Roberta, Matteo, Annapaola e Elisabetta)</li>
+                <li><a href="issues/aem_2014_07.pdf">Luglio 2014</a> (numero curato da Massimo Salani)</li>
+                <li><a href="issues/aem_2014_06.pdf">Giugno 2014</a> (numero curato da Giampaolo e Ilaria Rizzo, Paolo e Federica Martinelli)</li>
+                <li><a href="issues/aem_2014_05.pdf">Maggio 2014</a> (numero curato da Anna Maria e Lorenzo Aristei, Sandra e Riccardo Ascani, Maria Luisa e Giovanni Belcari, Massimo e Maria Cristina Bellini, Maria Chiara e Giovanni Coscetti, Tiziana e Federico Nannipieri)</li>
+                <li><a href="issues/aem_2014_04.pdf">Aprile 2014</a> (numero curato da Paolo e Luisa Mascellani)</li>
+                <li><a href="issues/aem_2014_03.pdf">Marzo 2014</a> (numero curato da Marco e Lucia Di Lieto)</li>
+                <li><a href="issues/aem_2014_02.pdf">Febbraio 2014</a> (numero curato da Mons. Enzo Lucchesini)</li>
+                <li><a href="issues/aem_2014_01.pdf">Gennaio 2014</a> (numero curato da Chiara Sani)</li>
+              </ul>
 
-      <p>Ascolta & Medita è un un'occasione di incontro e meditazione
-      della Parola di Dio quotidiana, prodotto dalla Diocesi di
-      Pisa. In molte chiese della diocesi di Pisa è possibile trovarlo
-      in forma cartacea. Qui è disponibile in vari formati digitali
-      per chi abita lontano da Pisa, o per chi preferisce leggere
-        direttamente sul proprio smartphone o computer.</p>
-
-      <p>Buona meditazione!</p>
-
-      <div class="alert alert-success"><b>Novità aprile 2020!</b>
-      Recentemente Ascolta & Medita ha esteso la sua presenza sul web
-      e può essere letto tramite email, Telegram o Twitter. Puoi
-      scaricare e divulgare il volantino
-      (<a href="flyer/AeM%20colori.pdf" target="_blank">a colori</a>
-      o <a href="flyer/AeM%20bianco%20e%20nero.pdf" target="_blank">in
-      bianco e nero</a>) che ricapitola tutte i canali
-      disponibili!</div>
-
-      <h2>Email</h2>
-
-      Puoi ricevere ogni giorno Ascolta e Medita sulla tua casella
-      email iscrivendoti con questo form. Nome e cognome sono
-      opzionali, puoi lasciarli bianchi se non vuoi darli. È possibile
-      disiscriversi in ogni momento utilizzando il link in fondo ad
-      ogni email.
-
-      <script type="text/javascript" src="https://mautic.ascoltaemedita.it/form/generate.js?id=1"></script>
-
-      <h2>Telegram</h2>
-
-      Se usi l'applicazione di messaggeria Telegram puoi ricevere ogni
-      giorno direttamente sul tuo computer o smartphone la meditazione
-      di Ascolta e Medita, iscrivendoti al
-      canale <a href="https://t.me/AscoltaEMedita">dedicato ad Ascolta
-        e Medita</a>.
-
-      <h2>Twitter</h2>
-
-      Segui il <a href="https://twitter.com/AscoltaEMedita">profilo di
-      Ascolta & Medita</a>, che twitterà ogni mattina la meditazione
-      del giorno.
-
-      <h2>PDF scaricabili</h2>
-
-      Puoi trovare qui sotto tutti i PDF di Ascolta e Medita dal 2013
-      in poi.
-
-      <h3>Anno 2020</h3>
-
-      <ul>
-        <!--<li><a href="issues/aem_2020_12.pdf">Dicembre 2020</a> (numero curato da Tommaso Rizzo, Rebecca D'Andrea)</li>
-        <li><a href="issues/aem_2020_11.pdf">Novembre 2020</a> (numero curato da Patrizia Valleggi)</li>
-        <li><a href="issues/aem_2020_10.pdf">Ottobre 2020</a> (numero curato da Silvia e Paolo Sciotti)</li>
-        <li><a href="issues/aem_2020_09.pdf">Settembre 2020</a> (numero curato da Massimo Salani)</li>
-        <li><a href="issues/aem_2020_08.pdf">Agosto 2020</a> (numero curato da Michela e Roberto Roncella)</li>
-        <li><a href="issues/aem_2020_07.pdf">Luglio 2020</a> (numero curato da Chiara Sani)</li>-->
-        <li><a href="issues/aem_2020_06.pdf">Giugno 2020</a> (numero curato da Claudia Lamberti e Gabriele Bolognini)</li>
-        <li><a href="issues/aem_2020_05.pdf">Maggio 2020</a> (numero curato da Cristina e Emanuele Cattin, Michela e Paolo Buti)</li>
-        <li><a href="issues/aem_2020_04.pdf">Aprile 2020</a> (numero curato da Daniela e Mauro Leoncini)</li>
-        <li><a href="issues/aem_2020_03.pdf">Marzo 2020</a> (numero curato da una francescana secolare in cammino)</li>
-        <li><a href="issues/aem_2020_02.pdf">Febbraio 2020</a> (numero curato da Laura e Paolo Puglisi, Anna Fronda, Federica Fronda)</li>
-        <li><a href="issues/aem_2020_01.pdf">Gennaio 2020</a> (numero curato da Domenico Coviello, Angela Castino)</li>
-      </ul>
-
-      <h3>Anno 2019</h3>
-
-      <ul>
-        <li><a href="issues/aem_2019_12.pdf">Dicembre 2019</a> (numero curato da Tommaso Rizzo, Rebecca D'Andrea)</li>
-        <li><a href="issues/aem_2019_11.pdf">Novembre 2019</a> (numero curato da Patrizia Valleggi)</li>
-        <li><a href="issues/aem_2019_10.pdf">Ottobre 2019</a> (numero curato da Silvia e Paolo Sciotti)</li>
-        <li><a href="issues/aem_2019_09.pdf">Settembre 2019</a> (numero curato da Massimo Salani)</li>
-        <li><a href="issues/aem_2019_08.pdf">Agosto 2019</a> (numero curato da Michela e Roberto Roncella)</li>
-        <li><a href="issues/aem_2019_07.pdf">Luglio 2019</a> (numero curato da Chiara Sani)</li>
-        <li><a href="issues/aem_2019_06.pdf">Giugno 2019</a> (numero curato da Francesca e Luigi Pisani, Giovanni Mascellani)</li>
-        <li><a href="issues/aem_2019_05.pdf">Maggio 2019</a> (numero curato da Barbara Pandolfi)</li>
-        <li><a href="issues/aem_2019_04.pdf">Aprile 2019</a> (numero curato da Federica e Paolo Martinelli, Gianmarco Brocchi, Chiara Martinelli, Cristina Martinelli)</li>
-        <li><a href="issues/aem_2019_03.pdf">Marzo 2019</a> (numero curato da Luigi Cioni)</li>
-        <li><a href="issues/aem_2019_02.pdf">Febbraio 2019</a> (numero curato da Gabriella e Giacomo Gasparri, Cecilia e Pascal Biver)</li>
-        <li><a href="issues/aem_2019_01.pdf">Gennaio 2019</a> (numero curato da Ilaria Morelli, Martina Mazzanti)</li>
-      </ul>
-
-      <h3>Anno 2018</h3>
-
-      <ul>
-        <li><a href="issues/aem_2018_12.pdf">Dicembre 2018</a> (numero curato da Paola e Andrea Bonaccorsi)</li>
-        <li><a href="issues/aem_2018_11.pdf">Novembre 2018</a> (numero curato da Barbara Pandolfi)</li>
-        <li><a href="issues/aem_2018_10.pdf">Ottobre 2018</a> (numero curato da Simone, Alessia e Alice Lunardi)</li>
-        <li><a href="issues/aem_2018_09.pdf">Settembre 2018</a> (numero curato da Chiara Sani)</li>
-        <li><a href="issues/aem_2018_08.pdf">Agosto 2018</a> (numero curato da Patrizia Valleggi)</li>
-        <li><a href="issues/aem_2018_07.pdf">Luglio 2018</a> (numero curato da Ilaria Morelli, Martina Mazzanti)</li>
-        <li><a href="issues/aem_2018_06.pdf">Giugno 2018</a> (numero curato da Massimo Salani)</li>
-        <li><a href="issues/aem_2018_05.pdf">Maggio 2018</a> (numero curato da una francescana secolare in cammino)</li>
-        <li><a href="issues/aem_2018_04.pdf">Aprile 2018</a> (numero curato da Caterina Guidi, Luisa Prodi, Giovanni Mascellani)</li>
-        <li><a href="issues/aem_2018_03.pdf">Marzo 2018</a> (numero curato da Michela e Roberto Roncella)</li>
-        <li><a href="issues/aem_2018_02.pdf">Febbraio 2018</a> (numero curato da Fabiola, Matteo e Emanuele Tomasi)</li>
-        <li><a href="issues/aem_2018_01.pdf">Gennaio 2018</a> (numero curato da Benedetta e Adriano Cerri, Giovanni Mascellani, Donatella Bouillon)</li>
-      </ul>
-
-      <h3>Anno 2017</h3>
-
-      <ul>
-        <li><a href="issues/aem_2017_12.pdf">Dicembre 2017</a> (numero curato da Gabriella e Giacomo Gasparri, Cecilia e Pascal Biver, Chiara e Gabriele Cheli)</li>
-        <li><a href="issues/aem_2017_11.pdf">Novembre 2017</a> (numero curato da Rossella e Davide Salvetti)</li>
-        <li><a href="issues/aem_2017_10.pdf">Ottobre 2017</a> (numero curato da Luisa e Massimo Signorini)</li>
-        <li><a href="issues/aem_2017_09.pdf">Settembre 2017</a> (numero curato da Simone, Alessia e Alice Lunardi)</li>
-        <li><a href="issues/aem_2017_08.pdf">Agosto 2017</a> (numero curato da Barbara Pandolfi)</li>
-        <li><a href="issues/aem_2017_07.pdf">Luglio 2017</a> (numero curato da Laura e Paolo Puglisi, Giulia e Fausto Montana)</li>
-        <li><a href="issues/aem_2017_06.pdf">Giugno 2017</a> (numero curato da Caterina Guidi)</li>
-        <li><a href="issues/aem_2017_05.pdf">Maggio 2017</a> (numero curato da Cristina e Emanuele Cattin, Michela e Paolo Buti)</li>
-        <li><a href="issues/aem_2017_04.pdf">Aprile 2017</a> (numero curato da Cristina e Francesco Scigliano, Centro Diocesano per le Vocazioni di Pisa)</li>
-        <li><a href="issues/aem_2017_03.pdf">Marzo 2017</a> (numero curato da Maria Concetta e Maurizio Pratelli)</li>
-        <li><a href="issues/aem_2017_02.pdf">Febbraio 2017</a> (numero curato da Roberta e Maurizio Guidato)</li>
-        <li><a href="issues/aem_2017_01.pdf">Gennaio 2017</a> (numero curato da Giuseppe Lami)</li>
-      </ul>
-
-      <h3>Anno 2016</h3>
-
-      <ul>
-        <li><a href="issues/aem_2016_12.pdf">Dicembre 2016</a> (numero curato da Maria Chiara e Giulio Vettori, Mario Cristofaro)</li>
-        <li><a href="issues/aem_2016_11.pdf">Novembre 2016</a> (numero curato da Gigi Avanti)</li>
-        <li><a href="issues/aem_2016_10.pdf">Ottobre 2016</a> (numero curato da Benedetta e Adriano Cerri)</li>
-        <li><a href="issues/aem_2016_09.pdf">Settembre 2016</a> (numero curato da Saverio Cenderelli, Giovanni Mascellani)</li>
-        <li><a href="issues/aem_2016_08.pdf">Agosto 2016</a> (numero curato da Laura e Paolo Puglisi, Giulia e Fausto Montana)</li>
-        <li><a href="issues/aem_2016_07.pdf">Luglio 2016</a> (numero curato da Massimo Salani)</li>
-        <li><a href="issues/aem_2016_06.pdf">Giugno 2016</a> (numero curato da Gabriella e Giacomo Gasparri, Cecilia e Pascal Biver)</li>
-        <li><a href="issues/aem_2016_05.pdf">Maggio 2016</a> (numero curato da Giulia e Antonio Sartori, Azzurra Bassi, Cosimo Dimitri)</li>
-        <li><a href="issues/aem_2016_04.pdf">Aprile 2016</a> (numero curato da Valentina e Matteo Benotto)</li>
-        <li><a href="issues/aem_2016_03.pdf">Marzo 2016</a> (numero curato da Caterina Guidi)</li>
-        <li><a href="issues/aem_2016_02.pdf">Febbraio 2016</a> (numero curato da Elisa e Marco Castrucci)</li>
-        <li><a href="issues/aem_2016_01.pdf">Gennaio 2016</a> (numero curato da Giovanna e Alfredo Capparelli, Luisa Prodi, Giovanni Mascellani)</li>
-      </ul>
-
-      <h3>Anno 2015</h3>
-
-      <ul>
-        <li><a href="issues/aem_2015_12.pdf">Dicembre 2015</a> (numero curato da Gigi Avanti)</li>
-        <li><a href="issues/aem_2015_11.pdf">Novembre 2015</a> (numero curato da Donatella Bouillon, Agostino Cerrai)</li>
-        <li><a href="issues/aem_2015_10.pdf">Ottobre 2015</a> (numero curato da Chiara Sani)</li>
-        <li><a href="issues/aem_2015_09.pdf">Settembre 2015</a> (numero curato da Massimo Salani)</li>
-        <li><a href="issues/aem_2015_08.pdf">Agosto 2015</a> (numero curato da Giulio e Maria Chiara Vettori)</li>
-        <li><a href="issues/aem_2015_07.pdf">Luglio 2015</a> (numero curato da Barbara Pandolfi)</li>
-        <li><a href="issues/aem_2015_06.pdf">Giugno 2015</a> (numero curato da Andrea e Paola Bonaccorsi, Fausto e Giulia Montana)</li>
-        <li><a href="issues/aem_2015_05.pdf">Maggio 2015</a> (numero curato da Alfredo e Giovanna Capparelli, Paolo e Laura Puglisi, Rita Puglisi, Marco Puglisi, Enrico Puglisi)</li>
-        <li><a href="issues/aem_2015_04.pdf">Aprile 2015</a> (numero curato da Mons. Enzo Lucchesini)</li>
-        <li><a href="issues/aem_2015_03.pdf">Marzo 2015</a> (numero curato da Giacomo e Gabriella Gasparri, Pascal e Cecilia Biver)</li>
-        <li><a href="issues/aem_2015_02.pdf">Febbraio 2015</a> (numero curato da Luigi Cioni)</li>
-        <li><a href="issues/aem_2015_01.pdf">Gennaio 2015</a> (numero curato da Sandro e Laura Borsacchi)</li>
-      </ul>
-
-      <h3>Anno 2014</h3>
-
-      <ul>
-        <li><a href="issues/aem_2014_12.pdf">Dicembre 2014</a> (numero curato da Mons. Enzo Lucchesini)</li>
-        <li><a href="issues/aem_2014_11.pdf">Novembre 2014</a> (numero curato da Simone e Annarita Allegrini, Giovanni Mascellani)</li>
-        <li><a href="issues/aem_2014_10.pdf">Ottobre 2014</a> (numero curato da Gigi Avanti)</li>
-        <li><a href="issues/aem_2014_09.pdf">Settembre 2014</a> (numero curato da Donatella Bouillon, Maurizio e Maria Concetta Pratelli)</li>
-        <li><a href="issues/aem_2014_08.pdf">Agosto 2014</a> (numero curato dalla famiglia Tomasi: Andrea e Roberta, Matteo, Annapaola e Elisabetta)</li>
-        <li><a href="issues/aem_2014_07.pdf">Luglio 2014</a> (numero curato da Massimo Salani)</li>
-        <li><a href="issues/aem_2014_06.pdf">Giugno 2014</a> (numero curato da Giampaolo e Ilaria Rizzo, Paolo e Federica Martinelli)</li>
-        <li><a href="issues/aem_2014_05.pdf">Maggio 2014</a> (numero curato da Anna Maria e Lorenzo Aristei, Sandra e Riccardo Ascani, Maria Luisa e Giovanni Belcari, Massimo e Maria Cristina Bellini, Maria Chiara e Giovanni Coscetti, Tiziana e Federico Nannipieri)</li>
-        <li><a href="issues/aem_2014_04.pdf">Aprile 2014</a> (numero curato da Paolo e Luisa Mascellani)</li>
-        <li><a href="issues/aem_2014_03.pdf">Marzo 2014</a> (numero curato da Marco e Lucia Di Lieto)</li>
-        <li><a href="issues/aem_2014_02.pdf">Febbraio 2014</a> (numero curato da Mons. Enzo Lucchesini)</li>
-        <li><a href="issues/aem_2014_01.pdf">Gennaio 2014</a> (numero curato da Chiara Sani)</li>
-      </ul>
-
-      <h3>Anno 2013</h3>
-
-      <ul>
-        <li><a href="issues/aem_2013_12.pdf">Dicembre 2013</a> (numero curato da Luigi Cioni)</li>
-        <li><a href="issues/aem_2013_11.pdf">Novembre 2013</a> (numero curato da Barbara Pandolfi)</li>
-        <li><a href="issues/aem_2013_10.pdf">Ottobre 2013</a> (numero curato da Massimo Salani)</li>
-        <li><a href="issues/aem_2013_09.pdf">Settembre 2013</a> (numero curato da Fausto e Giulia Montana)</li>
-        <li><a href="issues/aem_2013_08.pdf">Agosto 2013</a> (numero curato da Michele e Giulia Bacchereti, Paolo e Luisa Mascellani)</li>
-        <li><a href="issues/aem_2013_07.pdf">Luglio 2013</a> (numero curato da Andrea e Valentina Bernardini)</li>
-        <li><a href="issues/aem_2013_06.pdf">Giugno 2013</a> (numero curato da Gigi Avanti)</li>
-        <li><a href="issues/aem_2013_05.pdf">Maggio 2013</a> (numero curato da Mons. Enzo Lucchesini)</li>
-        <li><a href="issues/aem_2013_04.pdf">Aprile 2013</a> (numero curato da Lorenzo Aristei, Riccardo Ascani, Massimo Bellini, Sandra Biasci, Maria Chiara Bozzolato, Anna Maria Carosi, Agostino Cerrai, Giovanni Coscetti, Paola Lombardi, Maria Cristina Masi, Federico Nannipieri, Tiziana Trivella, Cristina Valtriani)</li>
-        <li><a href="issues/aem_2013_03.pdf">Marzo 2013</a> (numero curato da Andrea e Paola Bonaccorsi)</li>
-        <li><a href="issues/aem_2013_02.pdf">Febbraio 2013</a> (numero curato da Alfredo e Giovanna Capparelli, Paolo e Laura Puglisi)</li>
-        <li><a href="issues/aem_2013_01.pdf">Gennaio 2013</a> (numero curato da Mons. Enzo Lucchesini)</li>
-      </ul>
+              <hr>
+              <h3>Anno 2013</h3>
+              <ul>
+                <li><a href="issues/aem_2013_12.pdf">Dicembre 2013</a> (numero curato da Luigi Cioni)</li>
+                <li><a href="issues/aem_2013_11.pdf">Novembre 2013</a> (numero curato da Barbara Pandolfi)</li>
+                <li><a href="issues/aem_2013_10.pdf">Ottobre 2013</a> (numero curato da Massimo Salani)</li>
+                <li><a href="issues/aem_2013_09.pdf">Settembre 2013</a> (numero curato da Fausto e Giulia Montana)</li>
+                <li><a href="issues/aem_2013_08.pdf">Agosto 2013</a> (numero curato da Michele e Giulia Bacchereti, Paolo e Luisa Mascellani)</li>
+                <li><a href="issues/aem_2013_07.pdf">Luglio 2013</a> (numero curato da Andrea e Valentina Bernardini)</li>
+                <li><a href="issues/aem_2013_06.pdf">Giugno 2013</a> (numero curato da Gigi Avanti)</li>
+                <li><a href="issues/aem_2013_05.pdf">Maggio 2013</a> (numero curato da Mons. Enzo Lucchesini)</li>
+                <li><a href="issues/aem_2013_04.pdf">Aprile 2013</a> (numero curato da Lorenzo Aristei, Riccardo Ascani, Massimo Bellini, Sandra Biasci, Maria Chiara Bozzolato, Anna Maria Carosi, Agostino Cerrai, Giovanni Coscetti, Paola Lombardi, Maria Cristina Masi, Federico Nannipieri, Tiziana Trivella, Cristina Valtriani)</li>
+                <li><a href="issues/aem_2013_03.pdf">Marzo 2013</a> (numero curato da Andrea e Paola Bonaccorsi)</li>
+                <li><a href="issues/aem_2013_02.pdf">Febbraio 2013</a> (numero curato da Alfredo e Giovanna Capparelli, Paolo e Laura Puglisi)</li>
+                <li><a href="issues/aem_2013_01.pdf">Gennaio 2013</a> (numero curato da Mons. Enzo Lucchesini)</li>
+              </ul>
+              
+            </div>
+          </div>
+          
+        </div>
+      </div>
 
     </div> <!-- /container -->
 
