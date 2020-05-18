@@ -75,6 +75,10 @@ function scaricaJson(urljson) {
       $("#medita .testo").html(medita);
       $("#riflettere .testo").html(riflettere);
       $("#preghfin .testo").html(preghfin);
+      
+      	// cambia le classi al blocco dei testi così da mostrarlo con i dati scaricati
+      $(".testi-preghiera").removeClass("d-none")
+      $(".testi-preghiera").addClass("d-block")
        
     	},
     	error: function (request, status, error) {
@@ -83,9 +87,6 @@ function scaricaJson(urljson) {
     	},
     	
     	complete: function() {
-      	// cambia le classi al blocco dei testi così da mostrarlo con i dati scaricati
-      $(".testi-preghiera").removeClass("d-none")
-      $(".testi-preghiera").addClass("d-block")
       
     		$("#loading").hide();	
     	}
