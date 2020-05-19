@@ -148,6 +148,7 @@ isInWebAppChrome = (window.matchMedia('(display-mode: standalone)').matches);
 var primoAvvio = true;
 
 if (isInWebAppiOS && isInWebAppChrome && primoAvvio == true){
+  console.log("webapp");
   
   dataUrl(anno, mese, giorno);
   
