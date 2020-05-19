@@ -48,6 +48,7 @@ function scaricaJson(urljson) {
     		console.log(data);
     		
     		var date_str = data.date_str.toString().replace(/\n/g, "<br />");
+    		var year = data.year.toString().replace(/\n/g, "<br />");
     		var indications = data.indications.toString().replace(/\n/g, " - ");
     		var quotes = data.quotes.toString().replace(/\n/g, "<br />");
     		var curatore = data.curatore.toString().replace(/\n/g, "<br />");
@@ -60,7 +61,8 @@ function scaricaJson(urljson) {
     		var preghfin = data.preghfin.toString().replace(/\n/g, "<br />");        
 
       
-      $("#date_str").html(date_str);
+      $("#date_str h1").html(date_str.substring(0, date_str.lastIndexOf(" ")));
+      $("#date_str span").html(year);
       $("#indications").html(indications);
       $("#quotes").html(quotes);
       $("#curatore span").html(curatore);
