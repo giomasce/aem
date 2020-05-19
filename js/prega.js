@@ -145,6 +145,7 @@ $('#btt_sele_data').on('click', function(e) {
 isInWebAppiOS = (window.navigator.standalone == true);
 isInWebAppChrome = (window.matchMedia('(display-mode: standalone)').matches);
 
+/*
 var primoAvvio = true;
 console.log(primoAvvio);
 
@@ -158,3 +159,4 @@ if (isInWebAppiOS && isInWebAppChrome && primoAvvio == true){
 
 }
   
+*/
