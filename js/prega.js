@@ -141,4 +141,13 @@ $('#btt_sele_data').on('click', function(e) {
   $('#sele_data').datepicker('show');
 });
 
+
+
+if ("standalone" in window.navigator && window.navigator.standalone){
+
+  //window.location = 'http://www.domain.com';
+  
+  dataUrl("","","");
+
+}
   
