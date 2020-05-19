@@ -142,12 +142,16 @@ $('#btt_sele_data').on('click', function(e) {
 });
 
 
+isInWebAppiOS = (window.navigator.standalone == true);
+isInWebAppChrome = (window.matchMedia('(display-mode: standalone)').matches);
 
-if ("standalone" in window.navigator && window.navigator.standalone){
+var primoAvvio = true;
 
-  //window.location = 'http://www.domain.com';
+if (isInWebAppiOS && isInWebAppChrome && primoAvvio == true){
   
-  dataUrl("","","");
+  dataUrl(anno, mese, giorno);
+  
+  primoAvvio = false;
 
 }
   
