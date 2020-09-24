@@ -53,12 +53,21 @@ function scaricaJson(urljson) {
     		var quotes = data.quotes.toString().replace(/\n/g, "<br />");
     		var curatore = data.curatore.toString().replace(/\n/g, "<br />");
     		var prevangelo = data.prevangelo.toString().replace(/\n/g, "<br />");
-    		var preghiniz = data.preghiniz.toString().replace(/\n/g, "<br />");
+    		var preghiniz = '';
+    		if (data.hasOwnProperty('preghiniz')) {
+    		  preghiniz = data.preghiniz.toString().replace(/\n/g, "<br />");
+    		}
     		var vangelo = data.vangelo.toString().replace(/\n/g, "<br />");
     		var quote_vangelo = data.quote_vangelo.toString().replace(/\n/g, "<br />");
     		var medita = data.medita.toString().replace(/\n/g, "<br />");
-    		var riflettere = data.riflettere.toString().replace(/\n/g, "<br />");
-    		var preghfin = data.preghfin.toString().replace(/\n/g, "<br />");        
+    		var riflettere = '';
+    		if (data.hasOwnProperty('riflettere')) {
+    		  var riflettere = data.riflettere.toString().replace(/\n/g, "<br />");
+    		}
+    		var preghfin = '';
+    		if (data.hasOwnProperty('preghfin')) {
+    		  var preghfin = data.preghfin.toString().replace(/\n/g, "<br />");
+    		}
 
       
       $("#date_str h1").html(date_str.substring(0, date_str.lastIndexOf(" ")));
@@ -77,6 +86,22 @@ function scaricaJson(urljson) {
       $("#medita .testo").html(medita);
       $("#riflettere .testo").html(riflettere);
       $("#preghfin .testo").html(preghfin);
+      
+      if (preghiniz == '') {
+        $("#preghiniz").hide();
+      } else {
+        $("#preghiniz").show();
+      }
+      if (riflettere == '') {
+        $("#riflettere").hide();
+      } else {
+        $("#riflettere").show();
+      }
+      if (preghfin == '') {
+        $("#preghfin").hide();
+      } else {
+        $("#preghfin").show();
+      }
       
       	// cambia le classi al blocco dei testi così da mostrarlo con i dati scaricati
       $(".testi-preghiera").removeClass("d-none")
