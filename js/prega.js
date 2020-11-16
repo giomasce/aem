@@ -28,7 +28,7 @@ $('#sele_data').datepicker({
     language: "it",
     autoclose: true,
     todayHighlight: true,
-//  defaultViewDate: { year: anno, month: mese-1, day: giorno }
+//  defaultViewDate: { year: anno, month: mese-1, day: giorno } 
 });
 
 
