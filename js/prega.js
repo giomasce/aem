@@ -39,7 +39,7 @@ function scaricaJson(urljson) {
   
   $.ajax({
     	method: 'GET',
-    	url: "http://www.ascoltaemedita.it/json/"+urljson,
+    	url: "https://www.ascoltaemedita.it/json/"+urljson,
     	
     	dataType: 'json',
     	success: function(data){
