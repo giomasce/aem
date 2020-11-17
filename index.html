@@ -82,7 +82,7 @@
             <p class="card-text">Puoi ricevere ogni giorno Ascolta e Medita sulla tua casella email iscrivendoti, premi il pulsante sottostante.</p>
           </div>
           <div class="card-footer">
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#iscrEmail">Iscriviti</button>
+            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#email">Iscriviti</button>
           </div>
         </div>
         <div class="card shadow-sm">
@@ -106,7 +106,7 @@
       </div>
       
       <!-- Modal -->
-      <div class="modal fade" id="iscrEmail" tabindex="-1" role="dialog" aria-labelledby="Iscrizione Email" aria-hidden="true">
+      <div class="modal fade" id="email" tabindex="-1" role="dialog" aria-labelledby="Iscrizione Email" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
@@ -123,15 +123,15 @@
         </div>
       </div>
       
-      <div class="accordion" id="pdf-scaricabili">
+      <div class="accordion" id="acc_archivio">
         <div class="card shadow-sm text-center">
           <h5 class="card-header">Archivio PDF</h5>
           <div class="card-body">
             <p class="card-text">Puoi trovare qui sotto tutti i PDF di Ascolta e Medita dal 2013 in poi.</p>
-            <a href="#elencoPDF" class="btn btn-outline-dark" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="elencoPDF">Apri archivio</a>
+            <a href="#archivio" class="btn btn-outline-dark" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="archivio">Apri archivio</a>
           </div>
           
-          <div id="elencoPDF" class="collapse" aria-labelledby="elencoPDF" data-parent="#pdf-scaricabili">
+          <div id="archivio" class="collapse" aria-labelledby="archivio" data-parent="#acc_archivio">
             <div class="card-body text-left pt-0">
               <hr class="mt-0">
         
@@ -284,5 +284,30 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // se nell'url c'è un anchor di una modal la apre
+        $('.modal').each(function () {
+          const modalId = `#${$(this).attr('id')}`;
+          if (window.location.href.indexOf(modalId) !== -1) {
+              $(modalId).modal('show');
+          }
+        });
+        // se nell'url c'è un anchor di un accordion lo apre
+        $('.accordion .collapse').each(function () {
+          const accordionId = `#${$(this).closest('.accordion').attr('id')}`;
+          const collapseId = `#${$(this).attr('id')}`;
+          if (window.location.href.indexOf(collapseId) !== -1) {
+              $(collapseId).collapse('show');
+          }
+        });
+        
+        $('#archivio').on('shown.bs.collapse', function () {
+          // quando viene aperto l'archivio sposta la pagina considerando 56px dell'header
+          $('html,body').unbind().animate({scrollTop: $('#acc_archivio').offset().top-56});
+        })
+        
+      });  
+    </script>
   </body>
 </html>
